@@ -171,97 +171,99 @@ export default function CreateSurveys() {
     return (
         <>
             <Header />
-            <div className="form-container survey-form-body">
-                <h1>Survey Form</h1>
-                <form
-                    onSubmit={(e) => {
-                        e.preventDefault();
-                        handleSubmit(formData.status);
-                    }}
-                >
-                    <div className="form-group">
-                        <label htmlFor="survey-survey_title">Survey Title</label>
-                        <input
-                            type="text"
-                            id="survey-survey_title"
-                            name="survey_title"
-                            value={formData.survey_title}
-                            onChange={handleChange}
-                            required
-                        />
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="survey_survey_description">Survey Description</label>
-                        <input
-                            type="text"
-                            id="survey_survey_description"
-                            name="survey_description"
-                            value={formData.survey_description}
-                            onChange={handleChange}
-                            required
-                        />
-                    </div>
+            <div className='survey-main'>
+                <div className="form-container survey-form-body">
+                    <h1>Survey Form</h1>
+                    <form
+                        onSubmit={(e) => {
+                            e.preventDefault();
+                            handleSubmit(formData.status);
+                        }}
+                    >
+                        <div className="form-group">
+                            <label htmlFor="survey-survey_title">Survey Title</label>
+                            <input
+                                type="text"
+                                id="survey-survey_title"
+                                name="survey_title"
+                                value={formData.survey_title}
+                                onChange={handleChange}
+                                required
+                            />
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="survey_survey_description">Survey Description</label>
+                            <input
+                                type="text"
+                                id="survey_survey_description"
+                                name="survey_description"
+                                value={formData.survey_description}
+                                onChange={handleChange}
+                                required
+                            />
+                        </div>
 
-                    <div className="form-group">
-                        <label htmlFor="survey-category">Choose Category</label>
-                        <select
-                            id="survey-category"
-                            name="category_id"
-                            value={formData.category_id}
-                            onChange={handleChange}
-                            required
-                        >
-                            <option value="">Please select any category</option>
-                            {categoryList.length > 0 ? (
-                                categoryList.map(category => (
-                                    <option key={category.value} value={category.value}>
-                                        {category.text}
-                                    </option>
-                                ))
-                            ) : (
-                                <option value="" disabled>No categories available</option>
-                            )}
+                        <div className="form-group">
+                            <label htmlFor="survey-category">Choose Category</label>
+                            <select
+                                id="survey-category"
+                                name="category_id"
+                                value={formData.category_id}
+                                onChange={handleChange}
+                                required
+                            >
+                                <option value="">Please select any category</option>
+                                {categoryList.length > 0 ? (
+                                    categoryList.map(category => (
+                                        <option key={category.value} value={category.value}>
+                                            {category.text}
+                                        </option>
+                                    ))
+                                ) : (
+                                    <option value="" disabled>No categories available</option>
+                                )}
 
-                        </select>
-                    </div>
+                            </select>
+                        </div>
 
-                    <div className="form-group">
-                        <label htmlFor="new-category">Add New Category</label>
-                        <input
-                            type="text"
-                            id="new-category"
-                            value={newCategory}
-                            onChange={(e) => setNewCategory(e.target.value)}
-                            placeholder="Enter new category"
-                            disabled={categorySelected} // Disable if category is selected
-                        />
-                        <br></br>
+                        <div className="form-group">
+                            <label htmlFor="new-category">Add New Category</label>
+                            <input
+                                type="text"
+                                id="new-category"
+                                value={newCategory}
+                                onChange={(e) => setNewCategory(e.target.value)}
+                                placeholder="Enter new category"
+                                disabled={categorySelected} // Disable if category is selected
+                            />
+                            <br></br>
+                            <button
+                                type="button"
+                                className='btn btn-outline-success mt-3'
+                                onClick={handleAddCategory}
+                                disabled={categorySelected} // Disable if category is selected
+                            >
+                                Add Category
+                            </button>
+                        </div>
+
                         <button
-                            type="button"
-                            className='btn btn-outline-success mt-3'
-                            onClick={handleAddCategory}
-                            disabled={categorySelected} // Disable if category is selected
+                            type="submit"
+                            className='btn btn-outline-secondary'
+                            onClick={() => setFormData(prev => ({ ...prev, status: 'draft' }))}
                         >
-                            Add Category
+                            Save as Draft
                         </button>
-                    </div>
-
-                    <button
-                        type="submit"
-                        className='btn btn-outline-secondary'
-                        onClick={() => setFormData(prev => ({ ...prev, status: 'draft' }))}
-                    >
-                        Save as Draft
-                    </button>
-                    &nbsp;&nbsp;&nbsp;
-                    <button
-                        type="submit"
-                        className='btn btn-outline-danger'
-                        onClick={() => setFormData(prev => ({ ...prev, status: 'published' }))}
-                    >
-                        Publish
-                    </button>
-                </form>
+                        &nbsp;&nbsp;&nbsp;
+                        <button
+                            type="submit"
+                            className='btn btn-outline-danger'
+                            onClick={() => setFormData(prev => ({ ...prev, status: 'published' }))}
+                        >
+                            Publish
+                        </button>
+                    </form>
+                </div>
             </div>
             <Footer />
         </>

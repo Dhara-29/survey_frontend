@@ -78,7 +78,7 @@ export default function SurveyCards() {
     return (
         <>
             <Header />
-            <div className='container-fluid ml-5'>
+            <div className='container-fluid ml-5 viewSurvey-main'>
                 <div className="survey-cards-container">
                     <h1 className='mt-3' style={{ color: "#333" }}>All Surveys</h1>
                     {error && <p className="error-message">Failed to load surveys. Please try again later.</p>}

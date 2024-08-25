@@ -5,7 +5,9 @@
     align-items: center;
     padding: 20px;
 }
-
+.viewSurvey-main{
+    margin-top: 100px;
+}
 .cards-wrapper {
     display: flex;
     flex-wrap: wrap;

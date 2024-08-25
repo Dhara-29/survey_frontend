@@ -29,7 +29,7 @@ export default function Header() {
     return (
         <div>
             <header>
-                <div className="header-main">
+                <div className="header-main header-main-container">
                     <div className="container">
                         <nav id='cssmenu'>
                             <div className="logo">
@@ -55,7 +55,7 @@ export default function Header() {
                                         Create Surveys
                                     </a>
                                 </li>
-                                <li><a  onClick={() => {
+                                <li><a onClick={() => {
                                     if (userId) {
                                         navigate('/viewSurveys');
                                     } else {
@@ -71,7 +71,7 @@ export default function Header() {
                                 <span>
                                     <span>
                                         {userId ? (
-                                            <button className='btn btn-dark'>Profile</button>
+                                            <button className='btn btn-dark' onClick={() => navigate('/userProfile')}>Profile</button>
                                         ) : (
                                             <button className='btn btn-dark' onClick={() => navigate('/aboutUs')}>About Us</button>
                                         )}

@@ -10,13 +10,19 @@ h1, h2, h3, h4, h5, h6 {
       padding: 0;
       list-style: none;
   }
-  
   header {
-      position: relative;
-      width: 100%;
-      background: #212529;
-      z-index: 99;
-  }
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #212529;
+    z-index: 99;
+    height: 100px; /* Set height as needed */
+    line-height: 60px; /* Align text vertically */
+    padding: 0 20px; /* Adjust horizontal padding */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for better visibility */
+}
+
+ 
   /*---------header close----------*/
   /*-----------header-top------------*/
   .header-top {

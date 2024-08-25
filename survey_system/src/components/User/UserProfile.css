@@ -1,0 +1,62 @@
+.dashboard {
+    padding: 20px;
+    background-color: #f4f4f4;
+    margin-top: 150px;
+}
+
+.main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.profile-section {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.user-info h2 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.user-info p {
+    margin: 5px 0 0;
+    font-size: 16px;
+    color: #555;
+}
+
+.surveys-section {
+    margin-top: 20px;
+}
+
+.surveys-section h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.survey-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.survey-list li {
+    margin-bottom: 10px;
+}
+
+.survey-list a {
+    text-decoration: none;
+    color: #007bff;
+    font-size: 18px;
+}
+
+.survey-list a:hover {
+    text-decoration: underline;
+}
